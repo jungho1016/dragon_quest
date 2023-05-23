@@ -30,7 +30,9 @@ class Cleric {
   void pray(int seconds) {
     int? recovery = seconds + Random().nextInt(3);
     int plusMp = recovery + mp;
-    if (plusMp < mpMax) {
+    if (seconds <= 0) {
+      print('mp 회복 되지 않습니다');
+    } else if (plusMp < mpMax) {
       print('mp 회복 되지 않습니다');
     } else {
       print('mp: $plusMp');
