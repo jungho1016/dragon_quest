@@ -21,6 +21,8 @@ class Cleric {
       mp -= 5;
       hp = hpMax;
       print('hp : 최대 체력 회복, mp : $mp');
+    } else {
+      print('mp 부족합니다.');
     }
   }
 
