@@ -40,8 +40,7 @@ class Cleric {
 
     // 연습 문제 9-2
     final clericA = Cleric(name: '아서스', hp: 40, mp: 5);
-    final clericB = Cleric(name: '아서스', hp: 35, mp: 0);
-    final clericC = Cleric(name: '아서스', hp: 35, mp: 0);
-    final clericD = Cleric(name: '아서스', hp: 0, mp: 0);
+    final clericB = Cleric(name: '아서스', hp: 35, mp: mpMax);
+    final clericC = Cleric(name: '아서스', hp: hpMax, mp: mpMax);
   }
 }
