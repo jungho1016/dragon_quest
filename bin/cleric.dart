@@ -37,10 +37,12 @@ class Cleric {
     } else {
       print('mp: $plusMp');
     }
-
-    // 연습 문제 9-2
-    final clericA = Cleric(name: '아서스', hp: 40, mp: 5);
-    final clericB = Cleric(name: '아서스', hp: 35, mp: mpMax);
-    final clericC = Cleric(name: '아서스', hp: hpMax, mp: mpMax);
   }
+}
+
+void main() {
+  // 연습 문제 9-2
+  final clericA = Cleric(name: '아서스', hp: 40, mp: 5);
+  final clericB = Cleric(name: '아서스', hp: 35, mp: Cleric.mpMax);
+  final clericC = Cleric(name: '아서스', hp: Cleric.hpMax, mp: Cleric.mpMax);
 }
