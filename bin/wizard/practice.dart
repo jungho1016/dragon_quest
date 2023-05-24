@@ -18,18 +18,26 @@ void main() {
   Person person1 = Person(name: '홍길동', age: 20);
   Person person2 = Person(name: '한석봉', age: 25);
 
-  List<Person> persons = [person1, person2];
-  print(persons[0].name);
-  print(persons[1].name);
+  List<Person> persons1 = [person1, person2];
+  print(persons1[0].name);
+  print(persons1[1].name);
 
-  Map<Person, String> Persons = {person1: 'person1', person2: 'person2'};
+  Map<Person, String> persons2 = {person1: 'person1', person2: 'person2'};
   // print(Persons.keys);
   // print(Persons.entries);
-  Persons.keys.forEach((element) {
+  persons2.keys.forEach((element) {
     // print(element.name);
     // print(element.age);
+    // 노란색 밑줄 , for loop 추천?
     print('"${element.name}의 나이는 ${element.age}살"');
   });
+
+  for (var element in persons2.keys) {
+    // print(element.name);
+    // print(element.age);
+    // 노란색 밑줄 , for loop 추천?
+    print('"${element.name}의 나이는 ${element.age}살"');
+  }
 }
 
 // 연습 문제 2-3
