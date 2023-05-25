@@ -22,7 +22,6 @@ class PoisonSlime extends Slime {
   @override
   void attack(Hero hero) {
     super.attack(hero);
-    print('보통 슬라임과 같은 공격'); //?
     int currentHp;
 
     if (attackChance > 0) {
@@ -31,8 +30,10 @@ class PoisonSlime extends Slime {
       print('"$posiondamageHp포인트의 데미지"');
       currentHp = hero.hp - posiondamageHp;
       print('hp = $currentHp');
-      attackChance -= 1; //?
+      attackChance -= 1;
       print('attackChance : $attackChance');
+    } else {
+      print('독 포자가 다 떨어졌다!');
     }
   }
 }
@@ -40,9 +41,10 @@ class PoisonSlime extends Slime {
 void main() {
   PoisonSlime poisonSlime = PoisonSlime('A');
   Hero hero = Hero(name: '홍길동', hp: 100, sword: null);
-  poisonSlime.attack(hero);
-  poisonSlime.attack(hero);
-  poisonSlime.attack(hero);
-  poisonSlime.attack(hero);
-  poisonSlime.attack(hero);
+  poisonSlime.attack(hero); // 1차공격
+  poisonSlime.attack(hero); // 2차공격
+  poisonSlime.attack(hero); // 3차공격
+  poisonSlime.attack(hero); // 4차공격
+  poisonSlime.attack(hero); // 5차공격
+  poisonSlime.attack(hero); // 6차공격
 }
