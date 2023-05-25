@@ -1,42 +1,62 @@
-class Asset {}
-
-abstract class TangibleAsset extends Asset {}
-
-class Computer extends TangibleAsset {
+class Asset {
   String name;
   int price;
+
+  Asset(this.name, this.price);
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+  @override
+  double weight;
+  TangibleAsset(super.name, super.price, this.weight);
+
+  void onWeight() {
+    if (weight > 0) print('무게가 존재한다');
+  }
+}
+
+class Computer extends TangibleAsset {
   String color;
   String makerName;
 
   Computer(
-      {required this.name,
-      required this.color,
-      required this.makerName,
-      required this.price});
+    super.name,
+    super.price,
+    super.weight,
+    this.color,
+    this.makerName,
+  );
+
+  @override
+  set get(value) {}
 }
 
 class Book extends TangibleAsset {
-  String name;
-  int price;
   String color;
   String isbn;
 
-  Book({
-    required this.name,
-    required this.price,
-    required this.color,
-    required this.isbn,
-  });
+  Book(
+    super.name,
+    super.price,
+    super.weight,
+    this.color,
+    this.isbn,
+  );
+
+  @override
+  set get(value) {
+    // TODO: implement get
+  }
 }
 
-class IntangibleAsset extends Asset {}
+class IntangibleAsset extends Asset {
+  IntangibleAsset(super.name, super.price);
+}
 
 class Patent {}
 
-class Thing {
-  // double _weight;
+abstract interface class Thing {
+  double get weight;
 
-  // double get weight => _weight;
-
-  // Thing({required this.weight});
+  set get(value);
 }
