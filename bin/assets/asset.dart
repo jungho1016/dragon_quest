@@ -1,25 +1,59 @@
-void main() {
-  BoyGroup boyGroup = BoyGroup('bts');
-  boyGroup.sayName(); // 제 이름은 bts입니다
-  print(boyGroup.name);
+import '../asset.dart';
+
+class Asset {
+  String name;
+  int price;
+
+  Asset(this.name, this.price);
 }
 
-abstract interface class IdolInterface {
-  String name;
-
-  IdolInterface(this.name);
-
-  void sayName() {}
-}
-
-class BoyGroup implements IdolInterface {
+abstract class TangibleAsset extends Asset implements Thing {
   @override
-  String name;
+  double weight;
 
-  BoyGroup(this.name);
+  TangibleAsset(super.name, super.price, this.weight);
 
-  @override
-  void sayName() {
-    print('제 이름은 ${name}입니다');
+  void onWeight() {
+    if (weight > 0) print('무게가 존재한다');
   }
 }
+
+class Computer extends TangibleAsset {
+  String color;
+  String makerName;
+
+  Computer(
+    super.name,
+    super.price,
+    super.weight,
+    this.color,
+    this.makerName,
+  );
+
+  @override
+  set get(value) {}
+}
+
+class Book extends TangibleAsset {
+  String color;
+  String isbn;
+
+  Book(
+    super.name,
+    super.price,
+    super.weight,
+    this.color,
+    this.isbn,
+  );
+
+  @override
+  set get(value) {
+    // TODO: implement get
+  }
+}
+
+class IntangibleAsset extends Asset {
+  IntangibleAsset(super.name, super.price);
+}
+
+class Patent {}
