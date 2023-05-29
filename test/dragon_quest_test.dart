@@ -1,26 +1,16 @@
-class Wizard {
-  String name;
-  int hp;
-  int mp = 0;
-  Wand? wand;
+void main() {
+  var one = int.parse('1');
+  print(one);
 
-  Wizard({
-    required this.name,
-    this.hp = 0,
-    this.mp = 0,
-    this.wand,
-  });
-}
-
-class Wand {
-  String name;
-  double power;
-
-  Wand({
-    required this.name,
-    required this.power,
-  });
-
-  Wand wand1 = Wand(name: '마법사의 지팡이', power: 1);
-  Wizard wizard = Wizard(name: '간달프', hp: 100, mp: 0, wand: null);
+// String -> double
+//   var onePointOne = doueble.parse('1.1');
+//   assert(onePointOne == 1.1);
+//
+// // int -> String
+//   String oneAsString = 1.toString();
+//   assert(oneAsString == '1');
+//
+// // double -> String
+//   String piAsString = 3.14159.toStringAsFixed(2);
+//   assert(piAsString == '3.14');
 }
