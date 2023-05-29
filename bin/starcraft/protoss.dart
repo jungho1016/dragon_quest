@@ -1,4 +1,4 @@
-class Protoss {
+abstract class Protoss {
   int shield;
   final int maxshield;
   Protoss(this.shield, this.maxshield);
@@ -10,7 +10,7 @@ class Protoss {
   }
 }
 
-class BiounicUnit extends Protoss {
+abstract class BiounicUnit extends Protoss {
   BiounicUnit(super.shield, super.maxshield);
 }
 

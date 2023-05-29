@@ -1,15 +1,15 @@
-class Terran {
+abstract class Terran {
   String name;
   int hp;
   final int maxHp;
   Terran(this.name, this.hp, this.maxHp);
 }
 
-class Unit extends Terran {
+abstract class Unit extends Terran {
   Unit(super.name, super.hp, super.maxHp);
 }
 
-class BiounicUnit extends Unit {
+abstract class BiounicUnit extends Unit {
   BiounicUnit(super.name, super.hp, super.maxHp);
 
   void medicHeal() {
@@ -21,11 +21,6 @@ class BiounicUnit extends Unit {
 
 class Marin extends BiounicUnit {
   Marin(super.name, super.hp, super.maxHp);
-
-  @override
-  void medicHeal() {
-    super.medicHeal();
-  }
 }
 
 class Medic extends BiounicUnit {
@@ -104,6 +99,9 @@ void main() {
   squad.addToSquad(marin1);
   Marin marin2 = Marin('Marin', 30, 40);
   squad.addToSquad(marin2);
+
+  marin.medicHeal();
+  print(marin);
 
   Medic medic = Medic('medic', 10, 60);
   squad.addToSquad(medic);

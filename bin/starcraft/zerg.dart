@@ -1,4 +1,4 @@
-class Zerg {
+abstract class Zerg {
   int hp;
   final int maxHp;
   Zerg(this.hp, this.maxHp);
@@ -10,7 +10,7 @@ class Zerg {
   }
 }
 
-class BiounicUnit extends Zerg {
+abstract class BiounicUnit extends Zerg {
   BiounicUnit(super.hp, super.maxHp);
 }
 
