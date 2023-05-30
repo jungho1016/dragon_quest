@@ -1,7 +1,6 @@
 import 'dart:math';
 
-import 'hero.dart';
-
+import 'package:dragon_quest/hero.dart';
 
 // static 하고 똑같다
 

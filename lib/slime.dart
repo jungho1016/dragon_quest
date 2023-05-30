@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'hero.dart';
+import 'package:dragon_quest/hero.dart';
 
 class Slime {
   int hp = 50;

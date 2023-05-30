@@ -1,6 +1,6 @@
+import 'package:dragon_quest/hero.dart';
+import 'package:dragon_quest/hero_util.dart';
 
-import 'hero.dart';
-import 'hero_util.dart';
 import 'sword.dart';
 
 void main() {

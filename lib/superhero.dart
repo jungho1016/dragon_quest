@@ -1,11 +1,23 @@
 class Hero {
   String name;
   int hp;
-  String sword;
+  String? sword;
 
-  Hero({required this.name, required this.hp, required this.sword}) {
+  Hero({required this.name, required this.hp, this.sword}) {
     print('Hero 클래스의 인스턴스를 생성했습니다.');
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Hero &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          hp == other.hp &&
+          sword == other.sword;
+
+  @override
+  int get hashCode => name.hashCode ^ hp.hashCode ^ sword.hashCode;
 
   void attack() {}
 }

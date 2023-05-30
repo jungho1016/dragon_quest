@@ -38,13 +38,8 @@ class Book extends TangibleAsset {
   String color;
   String isbn;
 
-  Book(
-    super.name,
-    super.price,
-    super.weight,
-    this.color,
-    this.isbn,
-  );
+  Book(super.name, super.price, super.weight, this.color, this.isbn,
+      {required int publishDate});
 
   @override
   set get(value) {

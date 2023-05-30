@@ -27,7 +27,7 @@ class Medic extends BiounicUnit {
   Medic(super.name, super.hp, super.maxHp);
 }
 
-void heal() {
+void heal(BiounicUnit bionic) {
   // 메딕은 바이오 유닛과 SCV를 치료할 수 있지만 건물은 치료할 수 없음
 }
 
@@ -93,7 +93,8 @@ class Squad {
 void main() {
   Squad squad = Squad();
 
-  Marin marin = Marin('Marin', 10, 40);
+  BiounicUnit marin = Marin('Marin', 10, 40);
+  print(marin.runtimeType);
   squad.addToSquad(marin);
   Marin marin1 = Marin('Marin', 20, 40);
   squad.addToSquad(marin1);
