@@ -25,13 +25,12 @@ final transactions = [
 ];
 
 void main() {
-  List<int> sortedNames = transactions
-      .where((transaction) => transaction.year == 2011)
-      .toList()
-      .map((transactions) => transactions.value)
-      .toList()
-    ..sort();
-  print(sortedNames); // [300, 400]
+  final sortedNames =
+      (transactions.where((transaction) => transaction.year == 2011).toList()
+            ..sort((a, b) => a.value.compareTo(b.value)))
+          .map((transaction) => transaction.trader.name)
+          .toList();
+  print(sortedNames);
 
   List<String> cities = transactions
       .map((transaction) => transaction.trader.city)
