@@ -25,7 +25,7 @@ final transactions = [
 ];
 
 void main() {
-  var sortedNames = transactions
+  List<int> sortedNames = transactions
       .where((transaction) => transaction.year == 2011)
       .toList()
       .map((transactions) => transactions.value)
@@ -39,7 +39,7 @@ void main() {
       .toList();
   print(cities); // [Cambrige, Milan]
 
-  var cambridgeTraders = transactions
+  List<String> cambridgeTraders = transactions
       .where((transaction) => transaction.trader.city == "Cambrige")
       .toList()
       .map((transaction) => transaction.trader.name)
