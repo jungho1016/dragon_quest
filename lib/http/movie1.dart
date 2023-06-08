@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-import 'package:dragon_quest/http/model.dart';
+import 'package:dragon_quest/http/model/moviemodel.dart';
 
 void main() async {
   final response = await getTodo();

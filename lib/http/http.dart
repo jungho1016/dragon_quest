@@ -1,4 +1,4 @@
-import 'package:dragon_quest/http/model.dart';
+import 'package:dragon_quest/http/model/moviemodel.dart';
 
 Future<void> main() async {
   List<dynamic> test = [
