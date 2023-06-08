@@ -8,6 +8,8 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  csv: ^5.0.2
+  http: ^1.0.0
   intl: ^0.18.1
   # path: ^1.8.0
 

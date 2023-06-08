@@ -20,7 +20,7 @@ class Book {
           publishDate.day == other.publishDate.day;
 
   @override
-  int get hashCode =>
+  get hashCode =>
       title.hashCode ^
       publishDate.year.hashCode ^
       publishDate.month.hashCode ^
@@ -121,6 +121,7 @@ void main() {
   };
 
   //map
+
   List<Book> sortedMapList = sortBookMap.keys.toList()
     ..sort((a, b) => a.publishDate.compareTo(b.publishDate));
 
