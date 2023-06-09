@@ -4,14 +4,14 @@ import 'package:http/http.dart' as http;
 import 'package:dragon_quest/http/model/moviemodel.dart';
 
 void main() async {
-  final response = await getTodo();
+  final response = await getMovie(298618);
   final json = jsonDecode(response.body);
+  print(json);
   final json1 = Movie.fromJson(json);
-  json1.results.forEach((element) => print(element.overview));
+  print(json1);
 }
 
-Future getTodo() async {
+Future getMovie(int id) async {
   return http.get(Uri.parse(
-      'https://api.themoviedb.org/3/movie/${28}?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR&page=1'));
-  // ${movieId} = upcoming????
+      'https://api.themoviedb.org/3/movie/${id}?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR&page=1'));
 }

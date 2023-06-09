@@ -14,7 +14,7 @@ class Movie {
 
   Movie.fromJson(Map<String, dynamic> json) {
     dates = json['dates'] != null ? Dates.fromJson(json['dates']) : null;
-    page = json['page'];
+    page = json['page']!;
     results =
         List.from(json['results']).map((e) => Results.fromJson(e)).toList();
     totalPages = json['total_pages'];
