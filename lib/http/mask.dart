@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:dragon_quest/http/model/maskmodel.dart';
+import 'package:dragon_quest/http/model/mask_model.dart';
 import 'package:http/http.dart' as http;
 
 void main() async {
-  final response = await getTodo();
-  final jsonString = utf8.decode(response.bodyBytes); // UTF-8로 디코딩
-  final json = jsonDecode(jsonString);
-  final json1 = Mask.fromJson(json);
+  final http.Response response = await getTodo();
+  final String jsonString = utf8.decode(response.bodyBytes); // UTF-8로 디코딩
+  final Map<String, dynamic> json = jsonDecode(jsonString);
+  final Mask json1 = Mask.fromJson(json);
 
   // 전체 약국
   json1.stores.forEach((json1) {
